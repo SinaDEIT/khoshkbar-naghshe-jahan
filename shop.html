@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <title>فروشگاه | خشکبار نقش جهان</title>
+  <meta name="description" content="مشاهده و خرید همه‌ی محصولات خشکبار نقش جهان به تفکیک دسته‌بندی: پسته، بادام، گردو، خرما، کشمش، آجیل مخلوط، میوه خشک و حبوبات.">
+  <meta name="theme-color" content="#1C3B2B">
+  <!-- TODO: آدرس دامنه واقعی را جایگزین کنید -->
+  <link rel="canonical" href="https://example.ir/shop.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:site_name" content="خشکبار نقش جهان">
+  <meta property="og:title" content="فروشگاه | خشکبار نقش جهان">
+  <meta property="og:description" content="مشاهده و خرید همه‌ی محصولات خشکبار نقش جهان به تفکیک دسته‌بندی.">
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/vazirmatn-subset.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+
+<body data-page="shop">
+  <a class="skip-link" href="#main">پرش به محتوای اصلی</a>
+
+  <!-- =====================================================================
+       SVG sprite: آیکون‌ها و شکل‌های مغزها (یک بار تعریف، همه‌جا با <use>)
+       ===================================================================== -->
+  <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- مغزها: مبدأ مختصات در مرکز هر شکل است -->
+      <g id="n-pistachio"><ellipse rx="7" ry="10" fill="#A6C26F"/><path d="M0-9Q3 0 0 9" stroke="#6E8B3E" stroke-width="1.4" fill="none"/></g>
+      <g id="n-almond"><path d="M0-11C8-5 8 6 0 11C-8 6-8-5 0-11z" fill="#C79A5B"/><path d="M0-8Q2 0 0 8" stroke="#A67A3F" stroke-width="1" fill="none"/></g>
+      <g id="n-walnut"><circle r="9.5" fill="#9C6B42"/><path d="M-6-2Q0 4 6-2M-5 4Q0 8 5 4M0-9V9" stroke="#6E4A2C" stroke-width="1.2" fill="none"/></g>
+      <g id="n-date"><ellipse rx="6" ry="10.5" fill="#6A3B22"/><ellipse cx="-2" cy="-3" rx="1.6" ry="4.5" fill="#9A6440" opacity=".7"/></g>
+      <g id="n-raisin"><ellipse rx="6" ry="5" fill="#5B3A5E"/><ellipse cx="-1.5" cy="-1.5" rx="2" ry="1.4" fill="#8A6390" opacity=".7"/></g>
+      <g id="n-apricot"><circle r="9" fill="#E8A24A"/><path d="M-1-8Q4 0-1 8" stroke="#C9822B" stroke-width="1.3" fill="none"/></g>
+      <g id="n-chickpea"><circle r="6.5" fill="#D9B26F"/><path d="M-3-4Q0-1 3-4" stroke="#B48A45" stroke-width="1" fill="none"/></g>
+      <linearGradient id="g-bowl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7F0E2"/><stop offset="1" stop-color="#D3C19A"/></linearGradient>
+    </defs>
+
+    <!-- آیکون‌های خطی (24×24) -->
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h8.7a1 1 0 0 0 1-.8L20 8H6.2"/><circle cx="9.5" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.3-9.2C1.6 8.3 3.4 5 6.6 5c2 0 3.5 1.1 5.4 3 1.9-1.9 3.4-3 5.4-3 3.2 0 5 3.3 3.9 6.3C19.5 15.9 12 20.5 12 20.5z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.5c0 4.5-3.1 8-7.5 9.5-4.4-1.5-7.5-5-7.5-9.5V6L12 3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v10H2zM13 9h4.5L21 12.5V16h-8"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3.5" y="9" width="17" height="11" rx="1.5"/><path d="M12 9v11M3.5 13h17M12 9C9 9 7.5 7.5 8 6c.5-1.6 2.6-1.4 4 3 1.4-4.4 3.5-4.6 4-3 .5 1.5-1 3-4 3z"/></symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/><path d="M19 20c0 1-1.5 2-4 2h-2"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8h.01"/></symbol>
+    <symbol id="i-telegram" viewBox="0 0 24 24"><path d="M21 4L3 11l6 2.5L11 20l3-4.5 5 3.5L21 4z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l1.5 4-2 1.5a11 11 0 0 0 5 5L15 12.5l4 1.5v4a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+    <!-- پر شده -->
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9L12 3z"/></symbol>
+
+    <!-- نقوش تزئینی -->
+    <symbol id="o-star8" viewBox="0 0 92 92"><circle cx="46" cy="46" r="45" fill="none" stroke="currentColor" stroke-opacity=".5"/><polygon fill="currentColor" points="46.0,16.0 52.1,31.2 67.2,24.8 60.8,39.9 76.0,46.0 60.8,52.1 67.2,67.2 52.1,60.8 46.0,76.0 39.9,60.8 24.8,67.2 31.2,52.1 16.0,46.0 31.2,39.9 24.8,24.8 39.9,31.2"/></symbol>
+    <symbol id="o-pattern" viewBox="0 0 320 320">
+      <polygon fill="none" stroke="currentColor" stroke-opacity=".22" points="160,10 193.3,79.6 266.1,53.9 240.4,126.7 310,160 240.4,193.3 266.1,266.1 193.3,240.4 160,310 126.7,240.4 53.9,266.1 79.6,193.3 10,160 79.6,126.7 53.9,53.9 126.7,79.6"/>
+      <polygon fill="none" stroke="currentColor" stroke-opacity=".19" points="160,36 187.5,93.6 247.7,72.3 226.4,132.5 284,160 226.4,187.5 247.7,247.7 187.5,226.4 160,284 132.5,226.4 72.3,247.7 93.6,187.5 36,160 93.6,132.5 72.3,72.3 132.5,93.6"/>
+      <polygon fill="none" stroke="currentColor" stroke-opacity=".16" points="160,62 181.8,107.5 229.3,90.7 212.5,138.2 258,160 212.5,181.8 229.3,229.3 181.8,212.5 160,258 138.2,212.5 90.7,229.3 107.5,181.8 62,160 107.5,138.2 90.7,90.7 138.2,107.5"/>
+      <polygon fill="none" stroke="currentColor" stroke-opacity=".13" points="160,88 176,121.4 210.9,109.1 198.6,144 232,160 198.6,176 210.9,210.9 176,198.6 160,232 144,198.6 109.1,210.9 121.4,176 88,160 121.4,144 109.1,109.1 144,121.4"/>
+    </symbol>
+  </svg>
+
+
+  <!-- =====================================================================
+       ۱) نوار اعلان بالایی
+       ===================================================================== -->
+  <div class="announce" id="announce" role="region" aria-label="اطلاعیه فروشگاه">
+    <p class="announce__text flex items-center gap-2">
+      <svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg>
+      ارسال رایگان برای سفارش‌های بالای ۱ میلیون تومان
+      <svg class="icon icon--fill" aria-hidden="true"><use href="#i-star"/></svg>
+    </p>
+    <button class="announce__close" type="button" data-action="announce-close" aria-label="بستن اطلاعیه">
+      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </div>
+
+  <!-- ناظر اسکرول برای فعال‌شدن حالت شیشه‌ایِ پررنگ‌ترِ هدر -->
+  <div id="header-sentinel" aria-hidden="true"></div>
+
+
+  <!-- =====================================================================
+       ۲) هدر شیشه‌ای (Sticky) — با لینک‌های بازگشت به صفحه اصلی
+       ===================================================================== -->
+  <header class="site-header glass" id="site-header">
+    <div class="container site-header__bar">
+
+      <button class="icon-btn neo menu-toggle" type="button" data-action="menu-open"
+              aria-label="باز کردن منو" aria-controls="mobile-menu">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+
+      <!-- جایگاه لوگو -->
+      <a class="brand" href="index.html" aria-label="خشکبار نقش جهان — بازگشت به صفحه اصلی">
+        <img id="brand-logo" src="assets/img/logo.webp" width="320" height="270" alt="لوگوی خشکبار نقش جهان" decoding="async">
+      </a>
+
+      <nav class="primary-nav" aria-label="منوی اصلی">
+        <ul class="flex items-center gap-6">
+          <li class="has-menu">
+            <button class="nav-link is-active flex items-center gap-1" type="button" data-action="submenu"
+                    aria-expanded="false" aria-controls="submenu-categories">
+              دسته‌بندی‌ها
+              <svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg>
+            </button>
+            <ul class="submenu glass" id="submenu-categories">
+              <li><a href="shop.html?category=mixed" data-category="mixed">آجیل مخلوط</a></li>
+              <li><a href="shop.html?category=pistachio" data-category="pistachio">پسته</a></li>
+              <li><a href="shop.html?category=almond" data-category="almond">بادام</a></li>
+              <li><a href="shop.html?category=walnut" data-category="walnut">گردو</a></li>
+              <li><a href="shop.html?category=raisin" data-category="raisin">کشمش و مویز</a></li>
+              <li><a href="shop.html?category=date" data-category="date">خرما</a></li>
+              <li><a href="shop.html?category=fruit" data-category="fruit">میوه خشک</a></li>
+              <li><a href="shop.html?category=legumes" data-category="legumes">حبوبات</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="index.html#products">محصولات ویژه</a></li>
+          <li><a class="nav-link" href="index.html#about">درباره ما</a></li>
+          <li><a class="nav-link" href="#contact">تماس با ما</a></li>
+        </ul>
+      </nav>
+
+      <!-- جستجوی زنده -->
+      <form class="search" id="search" role="search" autocomplete="off">
+        <label class="sr-only" for="search-input">جستجوی محصولات</label>
+        <input class="search__input" id="search-input" type="search" name="q" enterkeyhint="search"
+               placeholder="جستجوی پسته، بادام، خرما ..."
+               role="combobox" aria-expanded="false" aria-controls="search-results" aria-autocomplete="list">
+        <svg class="icon search__icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <div class="search__panel glass" id="search-panel" hidden>
+          <ul class="search__list" id="search-results" role="listbox" aria-label="نتایج جستجو"></ul>
+          <a class="search__all" id="search-all" href="shop.html" hidden>مشاهده همه در فروشگاه</a>
+        </div>
+      </form>
+
+      <div class="site-header__actions flex items-center gap-3">
+        <a class="icon-btn neo" id="account-link" href="account.html" aria-label="ورود / ثبت‌نام">
+          <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>
+        </a>
+        <button class="icon-btn neo has-count" type="button" data-action="wishlist-open" aria-label="لیست علاقه‌مندی‌ها">
+          <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>
+          <span class="count-badge" data-wish-count hidden>۰</span>
+        </button>
+        <button class="icon-btn neo has-count" type="button" data-action="cart-open" aria-label="سبد خرید">
+          <svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg>
+          <span class="count-badge" data-cart-count hidden>۰</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <main id="main">
+
+    <!-- ===================================================================
+         بنر صفحه فروشگاه + بردکرامب + Pillهای دسته‌بندی (ناوبری واقعی با لینک)
+         =================================================================== -->
+    <section class="shop-banner" id="top" aria-labelledby="shop-title">
+      <div class="container">
+        <p class="breadcrumb">
+          <a href="index.html">خانه</a>
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+          <strong id="breadcrumb-current">فروشگاه</strong>
+        </p>
+        <h1 id="shop-title" data-shop-title>فروشگاه خشکبار نقش جهان</h1>
+        <p data-shop-sub>مرور و خرید همه‌ی محصولات، بر اساس دسته‌بندی دلخواه شما</p>
+
+        <nav class="cat-pills" id="cat-pills" aria-label="فیلتر دسته‌بندی محصولات">
+          <a class="pill" href="shop.html" data-cat-pill>همه محصولات</a>
+          <a class="pill" href="shop.html?category=pistachio" data-cat-pill data-category="pistachio">پسته</a>
+          <a class="pill" href="shop.html?category=almond" data-cat-pill data-category="almond">بادام</a>
+          <a class="pill" href="shop.html?category=walnut" data-cat-pill data-category="walnut">گردو</a>
+          <a class="pill" href="shop.html?category=date" data-cat-pill data-category="date">خرما</a>
+          <a class="pill" href="shop.html?category=raisin" data-cat-pill data-category="raisin">کشمش و مویز</a>
+          <a class="pill" href="shop.html?category=mixed" data-cat-pill data-category="mixed">آجیل مخلوط</a>
+          <a class="pill" href="shop.html?category=fruit" data-cat-pill data-category="fruit">میوه خشک</a>
+          <a class="pill" href="shop.html?category=legumes" data-cat-pill data-category="legumes">حبوبات</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         گرید کامل محصولات (بر اساس پارامتر ?category= فیلتر می‌شود)
+         =================================================================== -->
+    <section class="section" id="catalog">
+      <div class="container">
+        <ul class="product-grid" id="product-grid" aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <!-- CAT-INFO:START — توضیحات هر دسته‌بندی؛ فقط بخشِ دسته‌ی انتخاب‌شده (?category=) نمایش داده می‌شود -->
+    <section class="section section--tight-top" id="cat-info-section" aria-label="اطلاعات دسته‌بندی" hidden>
+      <div class="container">
+        <article class="cat-info" data-cat-info="pistachio" hidden>
+          <header class="cat-info__head">
+            <h2>همه چیز درباره‌ی پسته</h2>
+            <p>پسته از ارزشمندترین محصولات باغی ایران است و رفسنجان و کرمان از مهم‌ترین مناطق تولید آن به‌شمار می‌آیند. پسته هم به‌صورت خام و برشته مصرف می‌شود و هم در شیرینی، بستنی و غذاهای مجلسی جای ثابتی دارد.</p>
+          </header>
+          <section class="cat-info__box neo" aria-label="خواص">
+            <h3>خواص و ارزش غذایی</h3>
+            <ul class="check-list">
+              <li>منبع خوب پروتئین گیاهی و فیبر که حس سیری را طولانی‌تر می‌کند.</li>
+              <li>دارای چربی‌های غیراشباع مفید برای سلامت قلب، در مصرف معتدل.</li>
+              <li>حاوی ویتامین B6، پتاسیم و فسفر.</li>
+              <li>سرشار از آنتی‌اکسیدان‌هایی مانند لوتئین که برای سلامت چشم شناخته شده‌اند.</li>
+              <li>پرکالری است؛ یک مشت کوچک در روز برای بیشتر افراد کافی است.</li>
+            </ul>
+          </section>
+          <section class="cat-info__box neo" aria-label="انواع">
+            <h3>انواع و تفاوت‌ها</h3>
+            <p class="cat-info__diff">تفاوت اصلی انواع پسته در شکل دانه (کشیده یا گرد)، اندازه و رنگ مغز است. پسته‌ی کشیده و درشت معمولاً گران‌تر و مناسب پذیرایی است و انواع گرد و ریز بیشتر برای مصرف روزانه و قنادی به کار می‌روند.</p>
+            <div class="type-grid">
+            <div class="type-card">
+              <h4>اکبری</h4>
+              <p><b>ویژگی:</b> بلند و درشت، با مغز درشت.</p>
+              <p><b>مصرف:</b> پذیرایی، هدیه و مصرف مستقیم.</p>
+            </div>
+            <div class="type-card">
+              <h4>احمدآقایی</h4>
+              <p><b>ویژگی:</b> کشیده و باریک‌تر از اکبری، معمولاً با مغز سبز و خوش‌رنگ.</p>
+              <p><b>مصرف:</b> پذیرایی و تزیین شیرینی و بستنی.</p>
+            </div>
+            <div class="type-card">
+              <h4>کله‌قوچی</h4>
+              <p><b>ویژگی:</b> گرد و درشت، با طعم پررنگ‌تر.</p>
+              <p><b>مصرف:</b> مصرف روزانه و آجیل مجلسی.</p>
+            </div>
+            <div class="type-card">
+              <h4>فندقی</h4>
+              <p><b>ویژگی:</b> گرد و ریز، با طعم شیرین.</p>
+              <p><b>مصرف:</b> آجیل مخلوط و قنادی.</p>
+            </div>
+            </div>
+          </section>
+        </article>
+
+        <article class="cat-info" data-cat-info="almond" hidden>
+          <header class="cat-info__head">
+            <h2>همه چیز درباره‌ی بادام</h2>
+            <p>بادام یکی از پرمصرف‌ترین مغزها در ایران است و از خوردن مستقیم تا شیرینی‌پزی و تهیه‌ی شیر بادام کاربرد دارد. مغز بادام را می‌شود با پوست یا پوست‌کنده خرید.</p>
+          </header>
+          <section class="cat-info__box neo" aria-label="خواص">
+            <h3>خواص و ارزش غذایی</h3>
+            <ul class="check-list">
+              <li>از بهترین منابع طبیعی ویتامین E که آنتی‌اکسیدان است.</li>
+              <li>دارای منیزیم، پروتئین گیاهی و فیبر.</li>
+              <li>چربی‌های تک‌غیراشباع مفید برای قلب، در مصرف معتدل.</li>
+              <li>پوست قهوه‌ای مغز بادام حاوی پلی‌فنول‌های آنتی‌اکسیدان است.</li>
+              <li>میان‌وعده‌ای سیرکننده و مناسب برای همراه داشتن.</li>
+            </ul>
+          </section>
+          <section class="cat-info__box neo" aria-label="انواع">
+            <h3>انواع و تفاوت‌ها</h3>
+            <p class="cat-info__diff">تفاوت اصلی انواع بادام در سختی پوسته و اندازه‌ی مغز است. هرچه پوسته نازک‌تر باشد، باز کردن آن راحت‌تر است. مغز با پوست بافت و طعم پررنگ‌تری دارد و مغز پوست‌کنده روشن‌تر و برای شیرینی‌پزی مناسب‌تر است.</p>
+            <div class="type-grid">
+            <div class="type-card">
+              <h4>مامایی</h4>
+              <p><b>ویژگی:</b> مغز درشت و شیرین با پوسته‌ی نازک و شکننده.</p>
+              <p><b>مصرف:</b> خوردن مستقیم و پذیرایی.</p>
+            </div>
+            <div class="type-card">
+              <h4>کاغذی</h4>
+              <p><b>ویژگی:</b> پوسته‌ی بسیار نازک که با دست شکسته می‌شود.</p>
+              <p><b>مصرف:</b> میان‌وعده و تهیه‌ی مغز.</p>
+            </div>
+            <div class="type-card">
+              <h4>سنگی</h4>
+              <p><b>ویژگی:</b> پوسته‌ی سخت و ضخیم که از مغز بهتر محافظت می‌کند و مغز ریزتری دارد.</p>
+              <p><b>مصرف:</b> تهیه‌ی مغز و مصارف آشپزی.</p>
+            </div>
+            <div class="type-card">
+              <h4>بادام هندی (کاجو)</h4>
+              <p><b>ویژگی:</b> از خانواده‌ی بادام نیست و گیاه دیگری است؛ مغزی نرم، کرمی و ملایم دارد.</p>
+              <p><b>مصرف:</b> دسر، اسموتی و غذاهای شرقی.</p>
+            </div>
+            </div>
+          </section>
+        </article>
+
+        <article class="cat-info" data-cat-info="walnut" hidden>
+          <header class="cat-info__head">
+            <h2>همه چیز درباره‌ی گردو</h2>
+            <p>ایران یکی از تولیدکنندگان بزرگ گردو در دنیاست. گردو را هم با پوست می‌شود خرید و هم به‌صورت مغز، و کیفیت مغز بیشتر به کامل بودن دانه و رنگ آن بستگی دارد.</p>
+          </header>
+          <section class="cat-info__box neo" aria-label="خواص">
+            <h3>خواص و ارزش غذایی</h3>
+            <ul class="check-list">
+              <li>از معدود منابع گیاهی امگا۳ (آلفا‌لینولنیک‌اسید).</li>
+              <li>سرشار از آنتی‌اکسیدان‌ها و پلی‌فنول‌ها.</li>
+              <li>دارای منیزیم، فسفر و مس.</li>
+              <li>منبع پروتئین گیاهی و فیبر.</li>
+              <li>مصرف معتدل می‌تواند به سلامت قلب و مغز کمک کند.</li>
+            </ul>
+          </section>
+          <section class="cat-info__box neo" aria-label="انواع">
+            <h3>انواع و تفاوت‌ها</h3>
+            <p class="cat-info__diff">تفاوت اصلی انواع گردو در درجه‌ی سالم بودن دانه و رنگ مغز است. مغز روشن‌تر و کامل‌تر معمولاً تازه‌تر و ملایم‌تر است و مغز تیره‌تر ممکن است کمی تلخی داشته باشد. مغز شکسته ارزان‌تر است و برای پخت کاملاً مناسب است.</p>
+            <div class="type-grid">
+            <div class="type-card">
+              <h4>مغز چهارپر</h4>
+              <p><b>ویژگی:</b> مغز کامل و روشن با ظاهر یک‌دست؛ بالاترین درجه.</p>
+              <p><b>مصرف:</b> پذیرایی و تزیین غذا.</p>
+            </div>
+            <div class="type-card">
+              <h4>مغز دوپر</h4>
+              <p><b>ویژگی:</b> مغز دو نیم‌شده.</p>
+              <p><b>مصرف:</b> مصرف روزانه و آشپزی.</p>
+            </div>
+            <div class="type-card">
+              <h4>مغز شکسته</h4>
+              <p><b>ویژگی:</b> تکه‌های کوچک‌تر با قیمت مناسب‌تر.</p>
+              <p><b>مصرف:</b> شیرینی‌پزی، سالاد و پخت.</p>
+            </div>
+            <div class="type-card">
+              <h4>گردو با پوست</h4>
+              <p><b>ویژگی:</b> پوست از مغز محافظت می‌کند و تازگی را بیشتر نگه می‌دارد.</p>
+              <p><b>مصرف:</b> پذیرایی سنتی و تازه‌خوری.</p>
+            </div>
+            </div>
+          </section>
+        </article>
+
+        <article class="cat-info" data-cat-info="date" hidden>
+          <header class="cat-info__head">
+            <h2>همه چیز درباره‌ی خرما</h2>
+            <p>خرما میوه‌ای پرانرژی است که در جنوب ایران، از جمله بوشهر، خوزستان و کرمان (بم)، تولید می‌شود. انواع خرما بیشتر از نظر میزان رطوبت، رنگ و ماندگاری با هم فرق دارند.</p>
+          </header>
+          <section class="cat-info__box neo" aria-label="خواص">
+            <h3>خواص و ارزش غذایی</h3>
+            <ul class="check-list">
+              <li>منبع طبیعی و سریع انرژی به‌دلیل قندهای طبیعی.</li>
+              <li>دارای فیبر که به عملکرد گوارش کمک می‌کند.</li>
+              <li>حاوی پتاسیم و منیزیم.</li>
+              <li>دارای آنتی‌اکسیدان‌هایی مانند فلاونوئیدها.</li>
+              <li>قند بالایی دارد؛ مصرف در حد اعتدال توصیه می‌شود و افراد مبتلا به دیابت بهتر است با پزشک مشورت کنند.</li>
+            </ul>
+          </section>
+          <section class="cat-info__box neo" aria-label="انواع">
+            <h3>انواع و تفاوت‌ها</h3>
+            <p class="cat-info__diff">تفاوت اصلی انواع خرما در میزان رطوبت است: خرمای نرم و شیره‌دار طعم آبدارتری دارد اما ماندگاری‌اش کمتر است و خرمای خشک‌تر مدت بیشتری سالم می‌ماند و برای حمل‌ونقل و سوغات مناسب‌تر است.</p>
+            <div class="type-grid">
+            <div class="type-card">
+              <h4>مضافتی (بم)</h4>
+              <p><b>ویژگی:</b> نرم و شیره‌دار با پوست تیره و طعم شیرین.</p>
+              <p><b>مصرف:</b> تازه‌خوری و دسر؛ بهتر است در یخچال نگهداری شود.</p>
+            </div>
+            <div class="type-card">
+              <h4>ربی</h4>
+              <p><b>ویژگی:</b> خشک‌تر و کم‌شیره، با ماندگاری بالا.</p>
+              <p><b>مصرف:</b> مصرف روزانه و سوغات.</p>
+            </div>
+            <div class="type-card">
+              <h4>زاهدی</h4>
+              <p><b>ویژگی:</b> طلایی‌رنگ، خشک و بسیار شیرین.</p>
+              <p><b>مصرف:</b> شیرینی‌پزی و دسر.</p>
+            </div>
+            <div class="type-card">
+              <h4>کبکاب</h4>
+              <p><b>ویژگی:</b> درشت و گوشتی، نیمه‌خشک.</p>
+              <p><b>مصرف:</b> تازه‌خوری و پر کردن با مغز.</p>
+            </div>
+            </div>
+          </section>
+        </article>
+
+        <article class="cat-info" data-cat-info="raisin" hidden>
+          <header class="cat-info__head">
+            <h2>همه چیز درباره‌ی کشمش و مویز</h2>
+            <p>کشمش و مویز هر دو از خشک کردن انگور به‌دست می‌آیند و تفاوتشان بیشتر در نوع انگور و روش خشک کردن است. کشمش معمولاً بی‌دانه و ریزتر است و مویز درشت‌تر و پررنگ‌تر.</p>
+          </header>
+          <section class="cat-info__box neo" aria-label="خواص">
+            <h3>خواص و ارزش غذایی</h3>
+            <ul class="check-list">
+              <li>منبع سریع انرژی طبیعی.</li>
+              <li>دارای فیبر و پتاسیم.</li>
+              <li>حاوی مقداری آهن و آنتی‌اکسیدان‌های پلی‌فنولی.</li>
+              <li>جایگزین طبیعی برای شیرینی در آجیل، ماست و صبحانه.</li>
+              <li>ماندگاری بالا و نگهداری آسان.</li>
+            </ul>
+          </section>
+          <section class="cat-info__box neo" aria-label="انواع">
+            <h3>انواع و تفاوت‌ها</h3>
+            <p class="cat-info__diff">تفاوت اصلی در رنگ، اندازه و داشتن یا نداشتن هسته است. کشمش سبز و سلطانی معمولاً بی‌دانه‌اند و مویز اغلب هسته دارد و طعمش غلیظ‌تر است. به‌دلیل قند بالا، مصرف در حد اعتدال بهتر است.</p>
+            <div class="type-grid">
+            <div class="type-card">
+              <h4>کشمش سبز</h4>
+              <p><b>ویژگی:</b> ریز و بی‌دانه با رنگ سبز روشن.</p>
+              <p><b>مصرف:</b> آجیل، صبحانه و شیرینی.</p>
+            </div>
+            <div class="type-card">
+              <h4>کشمش سلطانی</h4>
+              <p><b>ویژگی:</b> بی‌دانه، درشت‌تر و طلایی.</p>
+              <p><b>مصرف:</b> قنادی و نان.</p>
+            </div>
+            <div class="type-card">
+              <h4>کشمش پلویی</h4>
+              <p><b>ویژگی:</b> ریز و یک‌دست.</p>
+              <p><b>مصرف:</b> پلوهای شیرین و مجلسی.</p>
+            </div>
+            <div class="type-card">
+              <h4>مویز</h4>
+              <p><b>ویژگی:</b> درشت و تیره، معمولاً با هسته و طعم پررنگ‌تر.</p>
+              <p><b>مصرف:</b> تنقلات و مصارف سنتی.</p>
+            </div>
+            </div>
+          </section>
+        </article>
+
+        <article class="cat-info" data-cat-info="mixed" hidden>
+          <header class="cat-info__head">
+            <h2>همه چیز درباره‌ی آجیل مخلوط</h2>
+            <p>آجیل مخلوط ترکیبی از چند مغز و گاهی میوه‌ی خشک است. مهم‌ترین تفاوت انواع آن در نوع ترکیب و شور یا خام بودن آن است.</p>
+          </header>
+          <section class="cat-info__box neo" aria-label="خواص">
+            <h3>خواص و ارزش غذایی</h3>
+            <ul class="check-list">
+              <li>تنوع مواد مغذی از چند منبع: چربی‌های مفید، پروتئین و فیبر.</li>
+              <li>میان‌وعده‌ای سیرکننده و پرانرژی.</li>
+              <li>دارای ویتامین E، منیزیم و آنتی‌اکسیدان‌ها.</li>
+              <li>مناسب سفر، محل کار و پذیرایی.</li>
+              <li>در انواع شور به میزان نمک توجه کنید، مخصوصاً اگر فشار خون بالا دارید.</li>
+            </ul>
+          </section>
+          <section class="cat-info__box neo" aria-label="انواع">
+            <h3>انواع و تفاوت‌ها</h3>
+            <p class="cat-info__diff">تفاوت اصلی انواع آجیل مخلوط در نمک و برشته کردن و نوع ترکیب است. آجیل خام بدون نمک برای رژیم‌های کم‌نمک مناسب‌تر است و آجیل شور برشته طعم پررنگ‌تری برای پذیرایی دارد.</p>
+            <div class="type-grid">
+            <div class="type-card">
+              <h4>آجیل خام</h4>
+              <p><b>ویژگی:</b> مغزهای بدون نمک و بدون برشته کردن.</p>
+              <p><b>مصرف:</b> افرادی که نمک را محدود می‌کنند و مصرف روزانه.</p>
+            </div>
+            <div class="type-card">
+              <h4>آجیل شور (برشته)</h4>
+              <p><b>ویژگی:</b> مغزهای برشته‌شده و نمک‌زده با طعم پررنگ.</p>
+              <p><b>مصرف:</b> پذیرایی و مهمانی.</p>
+            </div>
+            <div class="type-card">
+              <h4>چهارمغز</h4>
+              <p><b>ویژگی:</b> ترکیب چهار مغز درشت مثل گردو، بادام، پسته و فندق.</p>
+              <p><b>مصرف:</b> مصرف روزانه و هدیه.</p>
+            </div>
+            <div class="type-card">
+              <h4>آجیل شیرین و میوه‌دار</h4>
+              <p><b>ویژگی:</b> ترکیب مغزها با میوه‌ی خشک یا کشمش.</p>
+              <p><b>مصرف:</b> صبحانه و میان‌وعده‌ی کودکان.</p>
+            </div>
+            </div>
+          </section>
+        </article>
+
+        <article class="cat-info" data-cat-info="fruit" hidden>
+          <header class="cat-info__head">
+            <h2>همه چیز درباره‌ی میوه‌ی خشک</h2>
+            <p>میوه‌ی خشک با کم کردن آب میوه به‌دست می‌آید؛ طعمش غلیظ‌تر می‌شود و ماندگاری بیشتری پیدا می‌کند، اما چون آب آن گرفته شده، قند و کالری در هر گرم بالاتر است.</p>
+          </header>
+          <section class="cat-info__box neo" aria-label="خواص">
+            <h3>خواص و ارزش غذایی</h3>
+            <ul class="check-list">
+              <li>فیبر بالا که به عملکرد گوارش کمک می‌کند.</li>
+              <li>حفظ بخشی از املاح میوه مانند پتاسیم.</li>
+              <li>زردآلوی خشک منبع بتاکاروتن و مقداری آهن است.</li>
+              <li>ماندگاری بالا و نیاز نداشتن به یخچال.</li>
+              <li>به‌دلیل قند غلیظ، مصرف در حد اعتدال توصیه می‌شود.</li>
+            </ul>
+          </section>
+          <section class="cat-info__box neo" aria-label="انواع">
+            <h3>انواع و تفاوت‌ها</h3>
+            <p class="cat-info__diff">تفاوت اصلی در طعم و نوع میوه است. در زردآلوی خشک، رنگ نارنجی خیلی روشن معمولاً نشانه‌ی استفاده از نگهدارنده‌ی گوگردی است و رنگ قهوه‌ای روشن‌تر نشانه‌ی خشک شدن طبیعی‌تر. برچسب بسته‌بندی را بخوانید.</p>
+            <div class="type-grid">
+            <div class="type-card">
+              <h4>زردآلوی خشک</h4>
+              <p><b>ویژگی:</b> طعم ملس و شیرین.</p>
+              <p><b>مصرف:</b> میان‌وعده و شیرینی‌پزی.</p>
+            </div>
+            <div class="type-card">
+              <h4>آلو بخارا</h4>
+              <p><b>ویژگی:</b> طعم ترش و شیرین.</p>
+              <p><b>مصرف:</b> خورش و مصرف مستقیم.</p>
+            </div>
+            <div class="type-card">
+              <h4>انجیر خشک</h4>
+              <p><b>ویژگی:</b> شیرین با دانه‌های ریز و فیبر بالا.</p>
+              <p><b>مصرف:</b> میان‌وعده و صبحانه.</p>
+            </div>
+            <div class="type-card">
+              <h4>توت خشک</h4>
+              <p><b>ویژگی:</b> ریز و بسیار شیرین.</p>
+              <p><b>مصرف:</b> آجیل و صبحانه.</p>
+            </div>
+            </div>
+          </section>
+        </article>
+
+        <article class="cat-info" data-cat-info="legumes" hidden>
+          <header class="cat-info__head">
+            <h2>همه چیز درباره‌ی حبوبات</h2>
+            <p>حبوبات از پایه‌های تغذیه‌ی سنتی ایرانی‌اند و در آش، خورش، پلو و سوپ استفاده می‌شوند. تفاوت اصلی انواع آن‌ها اندازه، رنگ و زمان پخت است.</p>
+          </header>
+          <section class="cat-info__box neo" aria-label="خواص">
+            <h3>خواص و ارزش غذایی</h3>
+            <ul class="check-list">
+              <li>منبع مهم پروتئین گیاهی.</li>
+              <li>فیبر بالا که حس سیری ایجاد می‌کند.</li>
+              <li>دارای آهن، فولات و منیزیم.</li>
+              <li>کربوهیدرات با جذب آهسته که انرژی را تدریجی آزاد می‌کند.</li>
+              <li>ماندگار و اقتصادی؛ خیساندن قبل از پخت زمان پخت را کم می‌کند.</li>
+            </ul>
+          </section>
+          <section class="cat-info__box neo" aria-label="انواع">
+            <h3>انواع و تفاوت‌ها</h3>
+            <p class="cat-info__diff">تفاوت اصلی انواع حبوبات در اندازه‌ی دانه و داشتن پوست است: دانه‌ی درشت دیرتر می‌پزد و حبوبات پوست‌کنده و شکسته، مثل لپه و دال عدس، خیلی زودپزند. نخود و لوبیا را بهتر است از شب قبل خیس کنید.</p>
+            <div class="type-grid">
+            <div class="type-card">
+              <h4>نخود</h4>
+              <p><b>ویژگی:</b> انواع درشت و ریز؛ نوع درشت دیرتر می‌پزد.</p>
+              <p><b>مصرف:</b> آبگوشت، خورش و آش.</p>
+            </div>
+            <div class="type-card">
+              <h4>عدس</h4>
+              <p><b>ویژگی:</b> انواع درشت و ریز؛ نوع ریز زودپزتر است.</p>
+              <p><b>مصرف:</b> عدسی، سوپ و عدس‌پلو.</p>
+            </div>
+            <div class="type-card">
+              <h4>ماش (گتوند)</h4>
+              <p><b>ویژگی:</b> ریز و سبز.</p>
+              <p><b>مصرف:</b> آش، ماش‌پلو و جوانه.</p>
+            </div>
+            <div class="type-card">
+              <h4>لوبیا</h4>
+              <p><b>ویژگی:</b> انواع چیتی، سفید، قرمز، چشم‌بلبلی و عروس که بیشتر در رنگ، اندازه و زمان پخت فرق دارند.</p>
+              <p><b>مصرف:</b> خورش، خوراک لوبیا، آش و سالاد.</p>
+            </div>
+            <div class="type-card">
+              <h4>لپه</h4>
+              <p><b>ویژگی:</b> دانه‌ی شکسته‌ی نخود؛ زودپز.</p>
+              <p><b>مصرف:</b> قیمه، خورش و کوکو.</p>
+            </div>
+            <div class="type-card">
+              <h4>دال عدس</h4>
+              <p><b>ویژگی:</b> عدس شکسته و پوست‌کنده؛ بسیار زودپز.</p>
+              <p><b>مصرف:</b> سوپ، آش و خوراک.</p>
+            </div>
+            </div>
+          </section>
+        </article>
+
+        <p class="cat-info__note">اطلاعات این بخش جنبه‌ی آموزشی و عمومی دارد و جایگزین مشاوره‌ی پزشکی یا تغذیه نیست.</p>
+      </div>
+    </section>
+    <!-- CAT-INFO:END -->
+
+  </main>
+
+
+  <!-- =====================================================================
+       فوتر
+       ===================================================================== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+
+      <!-- عضویت در خبرنامه -->
+      <section class="newsletter glass-dark" id="auth-band" aria-label="حساب کاربری">
+        <div class="auth-band__content" id="auth-band-content">
+          <!-- با جاوااسکریپت پر می‌شود: بسته به ورود یا عدم ورود کاربر -->
+        </div>
+      </section>
+
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <!-- لوگو روی زمینه‌ی روشن قرار می‌گیرد تا روی پس‌زمینه‌ی تیره‌ی فوتر خوانا بماند -->
+          <a class="footer__logo" href="#top" aria-label="بازگشت به بالای صفحه">
+            <img src="assets/img/logo.webp" width="320" height="270" alt="لوگوی خشکبار نقش جهان" loading="lazy" decoding="async">
+          </a>
+          <p>فروشگاه آنلاین آجیل و خشکبار نقش جهان؛ عرضه‌ی بهترین پسته، بادام، گردو و خرما با کیفیتی ممتاز و بسته‌بندی شکیل.</p>
+          <ul class="socials flex gap-3">
+            <!-- TODO: لینک شبکه‌های اجتماعی -->
+            <li><a class="social glass-dark" href="#" aria-label="تلگرام"><svg class="icon" aria-hidden="true"><use href="#i-telegram"/></svg></a></li>
+            <li><a class="social glass-dark" href="#" aria-label="اینستاگرام"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a></li>
+            <li><a class="social glass-dark" href="tel:+98310000000" aria-label="تماس تلفنی"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></a></li>
+          </ul>
+        </div>
+
+        <nav class="footer__col" aria-labelledby="f-links">
+          <h2 class="footer__title" id="f-links">لینک‌های مفید</h2>
+          <ul>
+            <li><a href="index.html#about">درباره ما</a></li>
+            <li><a href="#contact">تماس با ما</a></li>
+            <li><a href="#">پیگیری سفارش</a></li>
+            <li><a href="#">سوالات متداول</a></li>
+            <li><a href="#">قوانین و مقررات</a></li>
+            <li><a href="#">حریم خصوصی</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-labelledby="f-cats">
+          <h2 class="footer__title" id="f-cats">دسته‌بندی‌ها</h2>
+          <ul>
+            <li><a href="shop.html?category=pistachio" data-category="pistachio">پسته</a></li>
+            <li><a href="shop.html?category=almond" data-category="almond">بادام</a></li>
+            <li><a href="shop.html?category=walnut" data-category="walnut">گردو</a></li>
+            <li><a href="shop.html?category=date" data-category="date">خرما</a></li>
+            <li><a href="shop.html?category=raisin" data-category="raisin">کشمش و مویز</a></li>
+            <li><a href="shop.html?category=mixed" data-category="mixed">آجیل مخلوط</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col">
+          <h2 class="footer__title">تماس با ما</h2>
+          <!-- TODO: اطلاعات واقعی فروشگاه -->
+          <address class="footer__contact">
+            <p class="flex items-center gap-2"><svg class="icon icon--gold" aria-hidden="true"><use href="#i-pin"/></svg>اصفهان، آدرس فروشگاه</p>
+            <p class="flex items-center gap-2"><svg class="icon icon--gold" aria-hidden="true"><use href="#i-phone"/></svg><a href="tel:+98310000000" dir="ltr">۰۳۱-۰۰۰۰۰۰۰۰</a></p>
+            <p class="flex items-center gap-2"><svg class="icon icon--gold" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:info@example.ir" dir="ltr">info@example.ir</a></p>
+          </address>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <!-- جایگاه نمادهای اعتماد: کد نماد اعتماد الکترونیکی (eNamad) و ساماندهی را داخل این کانتینر بگذارید -->
+        <div class="trust-badges flex gap-3" id="trust-badges" aria-label="نمادهای اعتماد">
+          <div class="trust-slot"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>نماد اعتماد الکترونیکی</span></div>
+          <div class="trust-slot"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg><span>ساماندهی</span></div>
+        </div>
+        <p class="footer__copy">© ۱۴۰۵ خشکبار نقش جهان — تمامی حقوق محفوظ است.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- =====================================================================
+       پنل‌های شناور (dialog بومیِ مرورگر: فوکوس‌تراپ و Esc بدون کد اضافه)
+       ===================================================================== -->
+
+  <!-- منوی موبایل -->
+  <dialog class="drawer drawer--menu glass" id="mobile-menu" aria-label="منوی سایت">
+    <div class="drawer__inner">
+      <header class="drawer__head">
+        <img src="assets/img/logo.webp" width="320" height="270" alt="خشکبار نقش جهان" class="drawer__logo" loading="lazy" decoding="async">
+        <button class="icon-btn neo" type="button" data-action="close" aria-label="بستن منو"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      </header>
+
+      <!-- جستجو داخل منوی موبایل (چون در نوار بالای موبایل جا ندارد) -->
+      <form class="search search--mobile" id="search-m" role="search" autocomplete="off">
+        <label class="sr-only" for="search-input-m">جستجوی محصولات</label>
+        <input class="search__input" id="search-input-m" type="search" name="q" enterkeyhint="search"
+               placeholder="جستجوی پسته، بادام، خرما ..."
+               role="combobox" aria-expanded="false" aria-controls="search-results-m" aria-autocomplete="list">
+        <svg class="icon search__icon" aria-hidden="true"><use href="#i-search"/></svg>
+        <div class="search__panel glass" id="search-panel-m" hidden>
+          <ul class="search__list" id="search-results-m" role="listbox" aria-label="نتایج جستجو"></ul>
+          <a class="search__all" id="search-all-m" href="shop.html" hidden>مشاهده همه در فروشگاه</a>
+        </div>
+      </form>
+
+      <nav class="mobile-nav" aria-label="منوی موبایل">
+        <ul>
+          <li><a href="index.html#products"><span class="mnav-icon"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-star"/></svg></span>محصولات ویژه</a></li>
+          <li><a href="index.html#about"><span class="mnav-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-shield"/></svg></span>درباره ما</a></li>
+          <li><a href="#contact"><span class="mnav-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-phone"/></svg></span>تماس با ما</a></li>
+        </ul>
+        <h2 class="mobile-nav__title">دسته‌بندی‌ها</h2>
+        <ul class="mobile-nav__cats">
+          <li><a href="shop.html?category=mixed" data-category="mixed">
+            <span class="mnav-icon"><svg viewBox="6 8 52 52" aria-hidden="true"><use href="#n-pistachio" transform="translate(22 26) rotate(-25) scale(1.4)"/><use href="#n-almond" transform="translate(43 25) rotate(25) scale(1.4)"/><use href="#n-walnut" transform="translate(32 45) scale(1.2)"/></svg></span>
+            آجیل مخلوط</a></li>
+          <li><a href="shop.html?category=pistachio" data-category="pistachio">
+            <span class="mnav-icon"><svg viewBox="6 8 52 52" aria-hidden="true"><use href="#n-pistachio" transform="translate(23 34) rotate(-28) scale(2)"/><use href="#n-pistachio" transform="translate(43 30) rotate(22) scale(2)"/></svg></span>
+            پسته</a></li>
+          <li><a href="shop.html?category=almond" data-category="almond">
+            <span class="mnav-icon"><svg viewBox="6 8 52 52" aria-hidden="true"><use href="#n-almond" transform="translate(23 33) rotate(-18) scale(2.1)"/><use href="#n-almond" transform="translate(43 34) rotate(24) scale(2.1)"/></svg></span>
+            بادام</a></li>
+          <li><a href="shop.html?category=walnut" data-category="walnut">
+            <span class="mnav-icon"><svg viewBox="6 8 52 52" aria-hidden="true"><use href="#n-walnut" transform="translate(22 37) scale(2)"/><use href="#n-walnut" transform="translate(42 27) rotate(10) scale(1.9)"/></svg></span>
+            گردو</a></li>
+          <li><a href="shop.html?category=raisin" data-category="raisin">
+            <span class="mnav-icon"><svg viewBox="6 8 52 52" aria-hidden="true"><use href="#n-raisin" transform="translate(20 24) rotate(-20) scale(1.6)"/><use href="#n-raisin" transform="translate(34 20) rotate(15) scale(1.6)"/><use href="#n-raisin" transform="translate(46 30) rotate(-30) scale(1.6)"/></svg></span>
+            کشمش و مویز</a></li>
+          <li><a href="shop.html?category=date" data-category="date">
+            <span class="mnav-icon"><svg viewBox="6 8 52 52" aria-hidden="true"><use href="#n-date" transform="translate(20 34) rotate(-30) scale(1.9)"/><use href="#n-date" transform="translate(34 30) rotate(10) scale(1.9)"/><use href="#n-date" transform="translate(46 38) rotate(35) scale(1.8)"/></svg></span>
+            خرما</a></li>
+          <li><a href="shop.html?category=fruit" data-category="fruit">
+            <span class="mnav-icon"><svg viewBox="6 8 52 52" aria-hidden="true"><use href="#n-apricot" transform="translate(22 36) scale(2)"/><use href="#n-apricot" transform="translate(42 28) rotate(20) scale(1.9)"/></svg></span>
+            میوه خشک</a></li>
+          <li><a href="shop.html?category=legumes" data-category="legumes">
+            <span class="mnav-icon"><svg viewBox="6 8 52 52" aria-hidden="true"><use href="#n-chickpea" transform="translate(18 22) scale(1.7)"/><use href="#n-chickpea" transform="translate(32 18) scale(1.7)"/><use href="#n-chickpea" transform="translate(46 24) scale(1.7)"/></svg></span>
+            حبوبات</a></li>
+        </ul>
+      </nav>
+    </div>
+  </dialog>
+
+  <!-- سبد خرید کشویی -->
+  <dialog class="drawer drawer--cart glass" id="cart-drawer" aria-labelledby="cart-title">
+    <div class="drawer__inner">
+      <header class="drawer__head">
+        <h2 id="cart-title">سبد خرید <span class="drawer__count" data-cart-count-text></span></h2>
+        <button class="icon-btn neo" type="button" data-action="close" aria-label="بستن سبد خرید"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      </header>
+
+      <div class="ship" id="ship">
+        <p class="ship__text" id="ship-text"></p>
+        <div class="ship__bar" role="presentation"><span id="ship-fill"></span></div>
+      </div>
+
+      <ul class="line-list" id="cart-list"></ul>
+
+      <div class="empty" id="cart-empty" hidden>
+        <svg viewBox="0 0 120 90" aria-hidden="true" class="empty__art">
+          <use href="#n-pistachio" transform="translate(44 40) rotate(-25) scale(2.2)"/><use href="#n-almond" transform="translate(70 34) rotate(20) scale(2.2)"/><use href="#n-walnut" transform="translate(58 52) scale(2)"/>
+          <path d="M22 50Q22 80 60 80Q98 80 98 50Z" fill="url(#g-bowl)"/><ellipse cx="60" cy="50" rx="38" ry="5" fill="#EADCBB"/>
+        </svg>
+        <p class="empty__title">سبد خرید شما خالی است</p>
+        <p class="empty__hint">از میان محصولات فروشگاه چیزی انتخاب کنید.</p>
+        <a class="btn btn--primary" href="#catalog" data-action="close">دیدن محصولات</a>
+      </div>
+
+      <footer class="drawer__foot" id="cart-foot">
+        <dl class="totals">
+          <div><dt>جمع سبد</dt><dd id="cart-subtotal"></dd></div>
+          <div><dt>هزینه ارسال</dt><dd id="cart-shipping"></dd></div>
+        </dl>
+        <button class="btn btn--primary btn--block" type="button" data-action="checkout">تسویه حساب</button>
+        <button class="btn btn--ghost btn--block" type="button" data-action="close">ادامه خرید</button>
+      </footer>
+    </div>
+  </dialog>
+
+  <!-- علاقه‌مندی‌ها -->
+  <dialog class="drawer drawer--cart glass" id="wishlist-drawer" aria-labelledby="wishlist-title">
+    <div class="drawer__inner">
+      <header class="drawer__head">
+        <h2 id="wishlist-title">علاقه‌مندی‌ها <span class="drawer__count" data-wish-count-text></span></h2>
+        <button class="icon-btn neo" type="button" data-action="close" aria-label="بستن لیست"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+      </header>
+      <ul class="line-list" id="wishlist-list"></ul>
+      <div class="empty" id="wishlist-empty" hidden>
+        <svg class="icon empty__icon" aria-hidden="true"><use href="#i-heart"/></svg>
+        <p class="empty__title">هنوز محصولی ذخیره نکرده‌اید</p>
+        <p class="empty__hint">روی قلب کنار هر محصول بزنید تا اینجا بماند.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- مشاهده سریع -->
+  <dialog class="modal glass" id="quickview" aria-labelledby="qv-title">
+    <button class="icon-btn neo modal__close" type="button" data-action="close" aria-label="بستن"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <div class="qv" id="qv-content"></div>
+  </dialog>
+
+  <!-- پیام‌های کوتاه -->
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+
+</body>
+</html>
