@@ -3,7 +3,7 @@
 {"id":"p2","name":"پسته احمد آقایی شور","cat":"pistachio","price":3800000,"old":3990000,"badge":"sale","label":null},
 {"id":"p3","name":"پسته کله قوچی شور","cat":"pistachio","price":3800000,"old":null,"badge":"best","label":null},
 {"id":"p4","name":"پنج مغز","cat":"mixed","price":3500000,"old":3700000,"badge":"sale","label":null},
-{"id":"p5","name":"نخودچی خام","cat":"nokhodchi","price":500000,"old":null,"badge":null,"label":null},
+{"id":"p5","name":"نخودچی خام","cat":"nokhodchi","price":500000,"old":680000,"badge":"sale","label":null},
 {"id":"p6","name":"نخودچی دوپو","cat":"nokhodchi","price":520000,"old":null,"badge":"new","label":null},
 {"id":"p7","name":"نخودچی شیرین","cat":"nokhodchi","price":520000,"old":null,"badge":"best","label":null},
 {"id":"p8","name":"مغز بادام خام ایرانی","cat":"almond","price":3500000,"old":3780000,"badge":"sale","label":null},
