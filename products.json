@@ -15,7 +15,7 @@
 {"id":"p14","name":"بادام هندی شور","cat":"almond","price":3300000,"old":null,"badge":"best","label":null},
 {"id":"p15","name":"بادام محب ایرانی","cat":"almond","price":2200000,"old":null,"badge":null,"label":null},
 {"id":"p16","name":"بادام محب شور","cat":"almond","price":2300000,"old":null,"badge":"new","label":null},
-{"id":"p17","name":"بادام زمینی آفتابگردانی","cat":"almond","price":1000000,"old":null,"badge":null,"label":null},
+{"id":"p17","name":"بادام زمینی آفتابگردانی","cat":"almond","price":1000000,"old":null,"badge":"custom","label":"مفت"},
 {"id":"p18","name":"بادام زمینی شور خارجی","cat":"almond","price":700000,"old":null,"badge":null,"label":null},
 {"id":"p19","name":"مغز گردو خارجی","cat":"walnut","price":750000,"old":800000,"badge":"sale","label":null},
 {"id":"p20","name":"فندق خام","cat":"hazelnut","price":null,"old":null,"badge":null,"label":null},
