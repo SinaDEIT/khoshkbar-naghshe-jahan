@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>پنل مدیریت | خشکبار نقش جهان</title>
+<style>
+@font-face{font-family:V;src:url(assets/fonts/vazirmatn-subset.woff2) format("woff2");font-display:swap}
+:root{--bg:#f6f4ee;--card:#fff;--ink:#1c2b22;--mut:#6b756e;--line:#e3dfd2;--g:#1C3B2B;--gold:#b8912a;--red:#b3261e;--ok:#1e7a46}
+@media(prefers-color-scheme:dark){:root{--bg:#141a16;--card:#1c2420;--ink:#ecefe9;--mut:#9aa59d;--line:#2d382f;--g:#7fc29a;--gold:#d9b04a;--red:#f08a82;--ok:#6fd49a}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 V,Tahoma,sans-serif}
+button,input,select{font:inherit;color:inherit}
+.hide{display:none!important}
+.login{max-width:340px;margin:12vh auto;padding:24px;background:var(--card);border:1px solid var(--line);border-radius:14px;display:grid;gap:12px}
+.login h1{margin:0 0 4px;font-size:20px}
+input,select{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%;min-width:0}
+input:focus,select:focus{outline:2px solid var(--gold);outline-offset:0}
+.btn{background:var(--g);color:var(--bg);border:0;border-radius:8px;padding:9px 16px;cursor:pointer;font-weight:700}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line);font-weight:400}
+.btn.del{background:none;color:var(--red);border:1px solid var(--red);font-weight:400}
+.btn:disabled{opacity:.45;cursor:default}
+.err{color:var(--red);min-height:1.4em;font-size:13px}
+header{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding:10px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+header h1{font-size:17px;margin:0;margin-inline-end:auto}
+header input,header select{width:auto;min-width:130px}
+.bar{max-width:1100px;margin:12px auto;padding:0 16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;color:var(--mut);font-size:13px}
+.bar input{width:70px;text-align:center}
+main{max-width:1100px;margin:0 auto;padding:0 16px 90px}
+.row{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:8px 10px;align-items:end;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.row.dirty{border-color:var(--gold);box-shadow:inset 3px 0 0 var(--gold)}
+.row.bad{border-color:var(--red)}
+.row label{display:block;font-size:11px;color:var(--mut)}
+.row small{color:var(--mut);font-size:11px}
+.row input[data-f=price],.row input[data-f=old]{direction:ltr;text-align:right}
+.c-name{grid-column:span 5}.c-cat{grid-column:span 3}.c-price{grid-column:span 2}.c-old{grid-column:span 2}
+.c-badge{grid-column:span 3}.c-label{grid-column:span 3}.c-w{grid-column:span 6}.c-act{grid-column:span 6;display:flex;gap:6px;justify-content:flex-end;align-items:end}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:var(--bg);border-radius:99px;padding:5px 12px;cursor:pointer;font-size:13px;color:var(--mut)}
+.chip.on{background:var(--g);border-color:var(--g);color:var(--bg);font-weight:700}
+.mini{padding:6px 10px;font-size:13px}
+.tag{display:inline-block;background:var(--ok);color:#fff;border-radius:99px;padding:0 8px;font-size:11px;margin-inline-start:6px}
+.savebar{position:fixed;inset:auto 0 0 0;background:var(--card);border-top:1px solid var(--line);padding:10px 16px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
+.msg{font-size:13px}.msg.ok{color:var(--ok)}.msg.bad{color:var(--red)}
+@media(max-width:760px){.c-name,.c-w,.c-act{grid-column:1/-1}.c-cat,.c-badge,.c-label,.c-price,.c-old{grid-column:span 6}}
+</style>
+</head>
+<body>
+
+<form class="login" id="login">
+  <h1>ورود مدیر</h1>
+  <input id="repo" dir="ltr" placeholder="نام‌کاربری/نام‌ریپازیتوری" required>
+  <input id="tok" type="password" dir="ltr" autocomplete="current-password" placeholder="توکن گیت‌هاب" required>
+  <label style="font-size:13px"><input id="rem" type="checkbox" style="width:auto"> مرا در این مرورگر به خاطر بسپار</label>
+  <div class="err" id="lerr"></div>
+  <button class="btn">ورود</button>
+</form>
+
+<div id="app" class="hide">
+  <header>
+    <h1>مدیریت محصولات <small id="count"></small></h1>
+    <button class="btn mini" id="add">+ افزودن محصول</button>
+    <input id="q" type="search" placeholder="جستجوی محصول…">
+    <select id="cat"><option value="">همه‌ی دسته‌ها</option></select>
+    <button class="btn ghost mini" id="out">خروج</button>
+  </header>
+  <div class="bar">
+    <span>تخفیف گروهی برای محصولاتِ نمایش‌داده‌شده:</span>
+    <input id="bulk" inputmode="numeric" placeholder="٪">
+    <button class="btn mini" id="bulkGo">اعمال تخفیف</button>
+    <button class="btn ghost mini" id="bulkClr">حذف تخفیف‌ها</button>
+    <span>· قیمت هر محصول برای ۱ کیلوگرم است؛ قیمت وزن‌های دیگر به‌نسبت محاسبه می‌شود.</span>
+  </div>
+  <main id="list"></main>
+  <div class="savebar">
+    <span class="msg" id="msg"></span>
+    <button class="btn ghost" id="reset" disabled>لغو تغییرات</button>
+    <button class="btn" id="save" disabled>ذخیره‌ی تغییرات</button>
+  </div>
+</div>
+
+<script>
+(()=>{
+const $=s=>document.querySelector(s);
+const CATS={pistachio:"پسته",mixed:"آجیل مخلوط",nokhodchi:"نخودچی",almond:"بادام",walnut:"گردو",hazelnut:"فندق",raisin:"کشمش و مویز",date:"خرما",fruit:"میوه خشک",legumes:"حبوبات",seeds:"تخمه",misc:"متفرقه"};
+const WS=[[250,"۲۵۰ گرم"],[500,"۵۰۰ گرم"],[750,"۷۵۰ گرم"],[1000,"۱ کیلوگرم"]],DW=[250,500,1000];
+const esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const num=v=>{v=String(v).replace(/[۰-۹]/g,d=>"۰۱۲۳۴۵۶۷۸۹".indexOf(d)).replace(/[٠-٩]/g,d=>"٠١٢٣٤٥٦٧٨٩".indexOf(d)).replace(/\D/g,"");return v===""?null:+v};
+const fmt=n=>n==null?"":n.toLocaleString("en-US");
+const BADGES=[["","بدون لیبل"],["sale","تخفیف"],["new","ویژه"],["best","پرفروش"],["custom","سفارشی…"]];
+let P=[],orig=new Map(),sha="",cfg=null;
+
+/* ---------- ارتباط با گیت‌هاب ---------- */
+const FILE="products.json",B64=t=>btoa(String.fromCharCode(...new TextEncoder().encode(t)));
+const UB64=b=>new TextDecoder().decode(Uint8Array.from(atob(b.replace(/\s/g,"")),c=>c.charCodeAt(0)));
+async function gh(method,body){
+  const r=await fetch(`https://api.github.com/repos/${cfg.repo}/contents/${FILE}`,{method,cache:"no-store",headers:{Accept:"application/vnd.github+json",Authorization:"Bearer "+cfg.tok,...(body?{"Content-Type":"application/json"}:{})},body:body&&JSON.stringify(body)});
+  const j=await r.json().catch(()=>({}));
+  if(r.status===401||r.status===403&&!j.message?.includes("rate"))throw new Error("توکن نامعتبر است یا دسترسی نوشتن ندارد.");
+  if(r.status===404)throw new Error("ریپازیتوری یا فایل products.json پیدا نشد.");
+  if(r.status===409||r.status===422)throw new Error("فایل در همین فاصله تغییر کرده؛ صفحه را دوباره بارگذاری کنید.");
+  if(!r.ok)throw new Error(j.message||"خطا");return j;
+}
+function show(on){$("#login").classList.toggle("hide",on);$("#app").classList.toggle("hide",!on)}
+
+/* ---------- وضعیت و تغییرات ---------- */
+const W=p=>(p.w&&p.w.length?p.w:DW);
+const snap=p=>JSON.stringify([p.name,p.cat,p.price,p.old,p.badge||null,p.badge==="custom"?p.label:null,[...W(p)].sort((a,b)=>a-b)]);
+const find=id=>P.find(p=>p.id===id);
+const isDirty=p=>orig.get(p.id)!==snap(p);
+function bar(msg,cls){
+  let n=P.filter(isDirty).length;const ids=new Set(P.map(p=>p.id));for(const id of orig.keys())if(!ids.has(id))n++;
+  $("#save").disabled=$("#reset").disabled=!n;$("#count").textContent=`(${P.length} محصول)`;
+  $("#msg").textContent=msg||(n?`${n} تغییر ذخیره‌نشده`:"");$("#msg").className="msg"+(cls?" "+cls:"");
+}
+function mark(row,p){row.classList.toggle("dirty",isDirty(p));row.classList.remove("bad");bar()}
+
+/* ---------- رندر ---------- */
+function rowEl(p){
+  const el=document.createElement("div");el.className="row"+(isDirty(p)?" dirty":"");el.dataset.id=p.id;
+  el.innerHTML=`<div class="c-name"><label>نام محصول${orig.has(p.id)?"":'<span class="tag">جدید</span>'}</label><input data-f="name" maxlength="60" value="${esc(p.name)}" placeholder="مثلاً عسل خوانساری"></div>
+  <div class="c-cat"><label>دسته‌بندی</label><select data-f="cat">${Object.entries(CATS).map(([k,v])=>`<option value="${k}"${p.cat===k?" selected":""}>${v}</option>`).join("")}</select></div>
+  <div class="c-price"><label>قیمت ۱ کیلوگرم</label><input type="text" inputmode="numeric" data-f="price" value="${fmt(p.price)}" placeholder="نامشخص"></div>
+  <div class="c-old"><label>قبل از تخفیف</label><input type="text" inputmode="numeric" data-f="old" value="${fmt(p.old)}" placeholder="—"></div>
+  <div class="c-badge"><label>لیبل</label><select data-f="badge">${BADGES.map(([v,t])=>`<option value="${v}"${(p.badge||"")===v?" selected":""}>${t}</option>`).join("")}</select></div>
+  <div class="c-label"><label>متن لیبل سفارشی</label><input data-f="label" maxlength="20" value="${esc(p.label)}" ${p.badge==="custom"?"":"disabled"}></div>
+  <div class="c-w"><label>وزن‌های موجود</label><div class="chips">${WS.map(([g,t])=>`<button type="button" class="chip${W(p).includes(g)?" on":""}" data-g="${g}" aria-pressed="${W(p).includes(g)}">${t}</button>`).join("")}</div></div>
+  <div class="c-act"><input data-f="pct" inputmode="numeric" placeholder="٪" style="width:54px;text-align:center"><button class="btn mini" data-a="disc" type="button">تخفیف</button><button class="btn del mini" data-a="del" type="button">حذف</button></div>`;
+  return el;
+}
+function render(){
+  const q=$("#q").value.trim(),c=$("#cat").value,box=$("#list"),frag=document.createDocumentFragment();let n=0;
+  for(const p of P){if((c&&p.cat!==c)||(q&&!p.name.includes(q)))continue;frag.appendChild(rowEl(p));n++}
+  box.replaceChildren(frag);if(!n)box.textContent="محصولی پیدا نشد.";bar();
+}
+function refresh(row,p){
+  row.querySelector("[data-f=price]").value=fmt(p.price);row.querySelector("[data-f=old]").value=fmt(p.old);
+  row.querySelector("[data-f=badge]").value=p.badge||"";const l=row.querySelector("[data-f=label]");l.value=p.label||"";l.disabled=p.badge!=="custom";mark(row,p);
+}
+function discount(p,pct){if(p.price==null||!(pct>0&&pct<100))return false;const base=p.old&&p.old>p.price?p.old:p.price;p.old=base;p.price=Math.round(base*(1-pct/100)/1000)*1000;p.badge="sale";p.label=null;return true}
+function clearDisc(p){if(p.old&&p.old>p.price)p.price=p.old;p.old=null;if(p.badge==="sale")p.badge=null}
+const visible=()=>[...document.querySelectorAll(".row")].map(r=>[find(r.dataset.id),r]);
+
+/* ---------- رویدادها ---------- */
+$("#list").addEventListener("input",e=>{
+  const f=e.target.dataset.f,row=e.target.closest(".row");if(!row||!f||f==="pct")return;const p=find(row.dataset.id);
+  if(f==="price"||f==="old"){const v=num(e.target.value);p[f]=v;e.target.value=fmt(v)}
+  else if(f==="badge"){p.badge=e.target.value||null;if(p.badge!=="custom")p.label=null;const l=row.querySelector("[data-f=label]");l.disabled=p.badge!=="custom";if(l.disabled)l.value="";else l.focus()}
+  else p[f]=e.target.value;
+  mark(row,p);
+});
+$("#list").addEventListener("click",e=>{
+  const row=e.target.closest(".row");if(!row)return;const p=find(row.dataset.id);
+  const chip=e.target.closest(".chip");
+  if(chip){
+    const g=+chip.dataset.g,w=new Set(W(p));
+    if(w.has(g)){if(w.size===1){bar("حداقل یک وزن باید فعال باشد.","bad");return}w.delete(g)}else w.add(g);
+    p.w=[...w].sort((a,b)=>a-b);chip.classList.toggle("on",w.has(g));chip.setAttribute("aria-pressed",w.has(g));mark(row,p);return;
+  }
+  const a=e.target.dataset.a;
+  if(a==="disc"){const pct=num(row.querySelector("[data-f=pct]").value);if(discount(p,pct))refresh(row,p);else bar("درصد (۱ تا ۹۹) و قیمت معتبر لازم است.","bad")}
+  if(a==="del"&&confirm(`«${p.name||"محصول جدید"}» حذف شود؟\n(با زدن «ذخیره» از سایت پاک می‌شود)`)){P=P.filter(x=>x!==p);row.remove();bar(`«${p.name||"محصول جدید"}» حذف شد — برای اعمال روی سایت ذخیره کنید.`)}
+});
+$("#add").onclick=()=>{
+  $("#q").value="";const c=$("#cat").value||"misc";
+  P.unshift({id:"p"+Date.now().toString(36),name:"",cat:c,price:null,old:null,badge:null,label:null,w:[...DW]});
+  render();const r=document.querySelector(".row");r.querySelector("[data-f=name]").focus();window.scrollTo({top:0,behavior:"smooth"});
+};
+$("#bulkGo").onclick=()=>{const pct=num($("#bulk").value);let k=0;visible().forEach(([p,r])=>{if(discount(p,pct)){refresh(r,p);k++}});bar(k?`تخفیف روی ${k} محصول اعمال شد (هنوز ذخیره نشده).`:"درصد معتبر (۱ تا ۹۹) وارد کنید.",k?"":"bad")};
+$("#bulkClr").onclick=()=>visible().forEach(([p,r])=>{clearDisc(p);refresh(r,p)});
+$("#q").oninput=render;$("#cat").onchange=render;
+$("#reset").onclick=()=>load(false);
+
+$("#save").onclick=async()=>{
+  const btn=$("#save");
+  if(P.some(p=>!p.name.trim())){render();document.querySelectorAll(".row").forEach(r=>{const p=find(r.dataset.id);if(p&&!p.name.trim())r.classList.add("bad")});bar("نام محصول را وارد کنید.","bad");return}
+  btn.disabled=true;bar("در حال ذخیره…");
+  const out=P.map(p=>{
+    const o={id:p.id,name:p.name.trim(),cat:p.cat,price:p.price};
+    let old=p.old;if(old!=null&&(p.price==null||old<=p.price))old=null;if(old)o.old=old;
+    let b=p.badge||null,l=null;if(b==="custom"){l=String(p.label||"").trim().slice(0,20);if(!l)b=null}
+    if(b)o.badge=b;if(l)o.label=l;
+    const w=[...W(p)].sort((a,b)=>a-b);if(w.join()!==DW.join())o.w=w;
+    return o;
+  });
+  const text="[\n"+out.map(x=>JSON.stringify(x)).join(",\n")+"\n]\n";
+  try{
+    const r=await gh("PUT",{message:"محصولات از پنل مدیریت",content:B64(text),sha});
+    sha=r.content.sha;P=out.map(o=>({old:null,badge:null,label:null,...o}));orig=new Map(P.map(p=>[p.id,snap(p)]));render();
+    bar("✓ ذخیره شد. تا حدود ۱ تا ۲ دقیقه‌ی دیگر روی سایت اعمال می‌شود.","ok");$("#save").disabled=$("#reset").disabled=true;
+  }catch(e){bar(e.message,"bad");btn.disabled=false}
+};
+$("#out").onclick=()=>{localStorage.removeItem("njk_admin");sessionStorage.removeItem("njk_admin");cfg=null;show(false)};
+
+async function load(first){
+  const j=await gh("GET");sha=j.sha;
+  P=JSON.parse(UB64(j.content)).map(o=>({old:null,badge:null,label:null,...o}));
+  orig=new Map(P.map(p=>[p.id,snap(p)]));
+  if(first)$("#cat").innerHTML='<option value="">همه‌ی دسته‌ها</option>'+Object.entries(CATS).map(([k,v])=>`<option value="${k}">${v}</option>`).join("");
+  show(true);render();bar("");
+}
+const guess=()=>{const h=location.hostname.split(".");if(h[1]!=="github"||h[2]!=="io")return"";const seg=location.pathname.split("/")[1];return h[0]+"/"+(seg&&!seg.includes(".")?seg:h[0]+".github.io")};
+$("#repo").value=guess();
+$("#login").onsubmit=async e=>{
+  e.preventDefault();$("#lerr").textContent="";
+  cfg={repo:$("#repo").value.trim(),tok:$("#tok").value.trim()};
+  try{await load(true);$("#tok").value="";(($("#rem").checked)?localStorage:sessionStorage).setItem("njk_admin",JSON.stringify(cfg))}
+  catch(x){cfg=null;$("#lerr").textContent=x.message||"خطا"}
+};
+try{const sv=localStorage.getItem("njk_admin")||sessionStorage.getItem("njk_admin");if(sv){cfg=JSON.parse(sv);$("#repo").value=cfg.repo;load(true).catch(()=>{cfg=null})}}catch{}
+})();
+</script>
+</body>
+</html>
