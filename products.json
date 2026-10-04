@@ -1,4 +1,5 @@
 [
+{"id":"pmutgr3y3","name":"مغز گردو ایرانی","cat":"walnut","price":10000000,"badge":"custom","label":"مفت"},
 {"id":"pmutbydql","name":"عسل","cat":"misc","price":2000000,"badge":"best","w":[250,500,750,1000]},
 {"id":"p1","name":"پسته اکبری شور","cat":"pistachio","price":4000000,"old":4260000,"badge":"sale"},
 {"id":"p2","name":"پسته احمد آقایی شور","cat":"pistachio","price":3800000,"old":3990000,"badge":"sale"},
